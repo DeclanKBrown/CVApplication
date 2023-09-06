@@ -1,10 +1,15 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #F3F4F6;
 
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-
-  }
+#root {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
