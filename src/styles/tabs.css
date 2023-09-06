@@ -32,7 +32,7 @@
     height: 1.8rem;
     border-radius: 0.5rem;
     padding-left: 1rem;
-    transition: outline 0.15s ease-in;
+    transition: outline 0.5s ease-in;
 }
 
 .tab input::selection {
@@ -73,6 +73,7 @@
     display: grid;
     grid-template-columns: 80% 2rem;
     gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 #point {
@@ -99,6 +100,7 @@
 }
 
 .experience-disp {
+    width: 100%;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -107,11 +109,67 @@
 }
 
 .exp-cont {
-    border-top: 2px solid #acadaf;
-    border-bottom: 2px solid #acadaf;
-    width: 80%;
+    border-top: 2px solid #F3F4F6;
+    border-bottom: 2px solid #F3F4F6;
+    width: 100%;
     padding: 1rem 0rem;
     justify-self: center;
 
+}
+
+.time {
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 1rem;
+}
+
+.dash {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    justify-self: start;
+    font-size: 1.5rem;
+}
+
+.dates-start {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    width: 100%;
+}
+
+.dates-end {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    width: 100%;
+}
+
+#start {
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+#end {
+    grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.delete, .cancel, .save {
+    background-color: #F3F4F6;
+    border: none;
+    height: 1.5rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+
+}
+
+.buttons-cont {
+    display: grid;
+    grid-template-columns: repeat(3, 5rem);
+    justify-content: space-around;
+
+}
+
+.save {
+    justify-self: end;
 }
 
