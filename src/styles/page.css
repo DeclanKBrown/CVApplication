@@ -3,4 +3,5 @@
     width: 800px;
     height: 1131px;
     box-shadow: 5px 10px 30px #acadaf;
+    align-self: start;
 }
