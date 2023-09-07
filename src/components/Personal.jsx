@@ -4,9 +4,21 @@ import { useState } from 'react'
 export default function Personal() {
 
     const [menu, setMenu] = useState(true)
+    const [values, setValues] = useState({
+        Fullname: '',
+        Email: '',
+        PhoneNumber: '',
+        Location: '',
+        LinkedIn: '',
+        GitHub: '',
+    })
 
     function toggleMenu() {
         setMenu(menu => menu === true ? false : true)
+    }
+
+    function handleChange(value, param) {
+        setValues({...values, [param]: value})
     }
 
     return (
@@ -19,27 +31,27 @@ export default function Personal() {
                 <>
                     <div className='row'>
                         <label className='label' name='name'>Full Name</label>
-                        <input id='inp' type='text' placeholder='First and last name'></input>
+                        <input id='inp' type='text' placeholder='First and last name' value={values.Fullname} onChange={(e) => handleChange(e.target.value, 'Fullname')}></input>
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>Email</label>
-                        <input id='inp' type='text' placeholder='example@example.com'></input>
+                        <input id='inp' type='text' placeholder='example@example.com' value={values.Email} onChange={(e) => handleChange(e.target.value, 'Email')}></input>
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>Phone number</label>
-                        <input id='inp' type='text' placeholder='0123 456 789'></input>
+                        <input id='inp' type='text' placeholder='0123 456 789' value={values.PhoneNumber} onChange={(e) => handleChange(e.target.value, 'PhoneNumber')}></input>
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>Location</label>
-                        <input id='inp' type='text' placeholder='Melbourne, Aus'></input>
+                        <input id='inp' type='text' placeholder='Melbourne, Aus' value={values.Location} onChange={(e) => handleChange(e.target.value, 'Location')}></input>
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>LinkedIn</label>
-                        <input id='inp' type='text' placeholder='LinkedIn.com/exmaple'></input>
+                        <input id='inp' type='text' placeholder='LinkedIn.com/exmaple' value={values.LinkedIn} onChange={(e) => handleChange(e.target.value, 'LinkedIn')}></input>
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>GitHub</label>
-                        <input id='inp' type='text' placeholder='Github.com/example'></input>
+                        <input id='inp' type='text' placeholder='Github.com/example' value={values.GitHub} onChange={(e) => handleChange(e.target.value, 'GitHub')}></input>
                     </div>
                 </>
             )}
