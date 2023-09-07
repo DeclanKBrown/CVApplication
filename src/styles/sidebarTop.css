@@ -8,6 +8,7 @@
     padding: 1rem 2rem;
     box-shadow: 5px 5px 10px #acadaf;
     border-radius: 1rem;
+    user-select: none;
 }
 
 .clear {
@@ -25,6 +26,8 @@
     border-radius: 0.4rem;
     padding: 0em 2em;
     background-color: white;
+    display: grid;
+    align-items: center;
 }
 
 .clear h3, .load h3 {

@@ -13,3 +13,9 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
