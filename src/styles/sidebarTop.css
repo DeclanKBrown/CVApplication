@@ -9,6 +9,7 @@
     box-shadow: 5px 5px 10px #acadaf;
     border-radius: 1rem;
     user-select: none;
+    overflow-y: hidden;
 }
 
 .clear {
@@ -28,6 +29,7 @@
     background-color: white;
     display: grid;
     align-items: center;
+    white-space: nowrap;
 }
 
 .clear h3, .load h3 {

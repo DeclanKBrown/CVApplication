@@ -11,4 +11,38 @@
 
 .personal-info {
     background-color: #0D374E;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: white;
+    grid-template-rows: 2fr 1fr 1fr;
+    padding: 1.5rem;
+    justify-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding-top: 2.5rem;
+}
+
+.name {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.additional-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    font-size: 0.7rem;
+    justify-items: center;
+    text-align: center;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.7rem;
+    justify-content: center;
+    text-align: center;
 }

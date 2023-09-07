@@ -1,31 +1,19 @@
 import '../styles/personal.css'
 import { useState } from 'react'
 
-export default function Personal() {
+export default function Personal({ handleChange, values }) {
 
     const [menu, setMenu] = useState(true)
-    const [values, setValues] = useState({
-        Fullname: '',
-        Email: '',
-        PhoneNumber: '',
-        Location: '',
-        LinkedIn: '',
-        GitHub: '',
-    })
 
     function toggleMenu() {
         setMenu(menu => menu === true ? false : true)
-    }
-
-    function handleChange(value, param) {
-        setValues({...values, [param]: value})
     }
 
     return (
         <div className='personal'>
             <div className='top'>
                 <h1 className='title'>Personal Details</h1>
-                <svg onClick={toggleMenu} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>menu-down</title><path d="M7,10L12,15L17,10H7Z" /></svg>
+                <svg className={menu ? 'open' : 'closed'} onClick={toggleMenu} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg>
             </div>
             {menu === true  && (
                 <>
