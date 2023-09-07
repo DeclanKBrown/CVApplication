@@ -15,7 +15,7 @@
     align-items: center;
     justify-items: center;
     color: white;
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 2fr min-content min-content;
     padding: 1.5rem;
     justify-items: center;
     text-align: center;
@@ -56,4 +56,42 @@
 
 .info svg {
     fill: white;
+}
+
+.education-container {
+    display: grid;
+    justify-items: center;
+    padding-top: 1.5rem;
+    grid-template-rows: min-content;
+}
+
+.education-title {
+    width: 90%;
+    height: 2.5rem;
+    background-color: #F3F4F6;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    margin-bottom: 1rem;
+}
+
+.education-title h1 {
+    font-size: 1.5rem;
+    color: #0D374E;
+}
+
+.degree-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 90%;
+}
+
+.information {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    gap: 0.5rem;
+}
+
+.bold {
+    font-weight: 700;
 }
