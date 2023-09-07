@@ -13,14 +13,14 @@ export default function App() {
         GitHub: '',
     })
 
-    const [education, setEducation] = useState({
+    const [education, setEducation] = useState([{
         School: '',
         Degree: '',
         Startdate: '',
         EndDate: '',
         Location: '',
-        Key: '',
-    })
+        Key: crypto.randomUUID(),
+    }])
 
     function clear() {
         setPersonal({
@@ -55,11 +55,13 @@ export default function App() {
             Degree: 'Bacholar of Software Engineering',
             Startdate: '01/01/2023',
             Enddate: 'Present',
-            Location: 'Meloburne, Austrlia',
+            Location: 'Melbourne, Australia',
             Key: crypto.randomUUID(),
         })
         
     }
+
+    const [form, setForm] = useState(false)
 
     function handleChange(value, param) {
         setPersonal({...personal, [param]: value})
@@ -67,14 +69,21 @@ export default function App() {
 
     function handleDelete(e) {
         e.preventDefault()
+        //Delete Logic
+        setForm(false)
+
     }
 
     function handleCancel(e) {
         e.preventDefault()
+        //Cancel Logic
+        setForm(false)
     }
 
     function handleSubmit(e) {
         e.preventDefault()
+        //Submit Logic
+        setForm(false)
     }
 
     function handleChangeEducation(value, param) {
@@ -83,7 +92,7 @@ export default function App() {
 
     return (
         <>
-            <Sidebar handleChange={handleChange} personal={personal} clear={clear} example={example} education={education} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} />
+            <Sidebar handleChange={handleChange} personal={personal} clear={clear} example={example} education={education} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} form={form} setForm={setForm} />
             <Page personal={personal} education={education}/>
         </>
     )

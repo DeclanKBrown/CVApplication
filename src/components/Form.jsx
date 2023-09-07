@@ -1,6 +1,6 @@
 import '../styles/personal.css'
 
-export default function Form({ education, setForm, handleDelete, handleCancel, handleSubmit, handleChangeEducation }) {
+export default function Form({ education, handleDelete, handleCancel, handleSubmit, handleChangeEducation }) {
     return (
         <form>
             <div className='row'>

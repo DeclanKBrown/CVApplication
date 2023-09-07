@@ -12,11 +12,21 @@ export default function Education({ education, toggleMenu, menu, form, setForm, 
             {menu.Education === true  && (
                 <>
                 {form ? (
-                    <Form education={education}  setForm={setForm} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} />
-                ) : 
-                    <div className='add-education-cont'>
-                        <button id='add-education' onClick={() => setForm(true)}>Add Education</button>
-                    </div>
+                    <Form education={education} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} />
+                ) : (
+                    <>
+                        {education.length > 0 ? (
+                            education.map((degree) => {
+                                <div className='edu-container' key={degree.Key}>
+                                    <h1>{degree.School}</h1>
+                                </div>
+                            })
+                        ) : null }
+                        <div className='add-education-cont'>
+                            <button id='add-education' onClick={() => setForm(true)}>Add Education</button>
+                        </div>
+                    </>
+                    )
                 }
                 </>
             )}

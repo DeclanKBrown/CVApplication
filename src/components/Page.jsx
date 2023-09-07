@@ -53,6 +53,9 @@ export default function Page({ personal }) {
                 </div>
               </div>
             </div>
+            <div className='education-container'>
+
+            </div>
           </div>
         </>
     )

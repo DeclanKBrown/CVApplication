@@ -4,7 +4,7 @@ import Personal from './Personal'
 import Education from './Education'
 import { useState } from 'react'
 
-export default function Sidebar({ handleChange, personal, clear, example, education, handleDelete, handleCancel, handleSubmit, handleChangeEducation }) {
+export default function Sidebar({ handleChange, personal, clear, example, education, handleDelete, handleCancel, handleSubmit, handleChangeEducation, form, setForm }) {
 
     const [menu, setMenu] = useState({
         Personal: true,
@@ -17,8 +17,6 @@ export default function Sidebar({ handleChange, personal, clear, example, educat
             [param]: !prevMenu[param]
         }))
     }
-
-    const [form, setForm] = useState(false)
 
     return (
         <div className='sidebar'>

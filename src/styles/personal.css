@@ -142,3 +142,9 @@ form {
     gap: 0.5rem;
 }
 
+.edu-container {
+    width: 100%;
+    border-top: #F3F4F6;
+    border-bottom: #F3F4F6;
+}
+
