@@ -1,21 +1,14 @@
 import '../styles/personal.css'
-import { useState } from 'react'
 
-export default function Personal({ handleChange, personal }) {
-
-    const [menu, setMenu] = useState(true)
-
-    function toggleMenu() {
-        setMenu(menu => menu === true ? false : true)
-    }
+export default function Personal({ handleChange, personal, toggleMenu, menu }) {
 
     return (
         <div className='personal'>
             <div className='top'>
                 <h1 className='title'>Personal Details</h1>
-                <svg className={menu ? 'open' : 'closed'} onClick={toggleMenu} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg>
+                <svg className={menu.Personal ? 'open' : 'closed'} onClick={() => toggleMenu('Personal')} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7,10L12,15L17,10H7Z" /></svg>
             </div>
-            {menu === true  && (
+            {menu.Personal === true  && (
                 <>
                     <div className='row'>
                         <label className='label' name='name'>Full Name</label>
@@ -35,7 +28,7 @@ export default function Personal({ handleChange, personal }) {
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>LinkedIn</label>
-                        <input id='inp' type='text' placeholder='LinkedIn.com/exmaple' value={personal.LinkedIn} onChange={(e) => handleChange(e.target.value, 'LinkedIn')}></input>
+                        <input id='inp' type='text' placeholder='Linkedin.com/exmaple' value={personal.LinkedIn} onChange={(e) => handleChange(e.target.value, 'LinkedIn')}></input>
                     </div>
                     <div className='row'>
                         <label className='label' name='name'>GitHub</label>

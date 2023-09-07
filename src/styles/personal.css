@@ -55,3 +55,90 @@
 .closed {
     transform: rotate(180deg);
 }
+
+/* EDUCATION */
+.add-education-cont {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    margin-top: 1rem;
+}
+
+#add-education {
+    border: 5px solid #F3F4F6;
+    border-radius: 2rem;
+    padding: 1em 2em;
+    background-color: white;
+    cursor: pointer;
+}
+
+#add-education:hover {
+    background-color: #F3F4F6;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+.half-row {
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0rem;
+    width: 80%;
+}
+
+#half-inp {
+    background-color: #F3F4F6;
+    border: none;
+    font-size: 1rem;
+    width: 100%;
+    outline: hidden;
+    transition: outline 0.5s ease-in-out;
+    border-radius: 0.5rem;
+    padding: 0.5em 0em;
+    padding-left: 0.3rem;
+    width: 80%;
+}
+
+.start-label {
+    grid-row: 1;
+    grid-column: 1 / 2;
+}
+
+.end-label {
+    grid-row: 1;
+    grid-column: 2 / 3;
+}
+
+.buttons {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0rem;
+    margin-top: 1rem;
+}
+
+#delete, #cancel, #submit {
+    width: 5rem;
+    padding: 0.5em 1em;
+    background: white;
+    border: 3px solid #F3F4F6;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#submit {
+    background-color: #177FF5;
+    border: 3px solid #177FF5;
+    color: white;
+}
+
+.main-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+

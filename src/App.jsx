@@ -13,6 +13,15 @@ export default function App() {
         GitHub: '',
     })
 
+    const [education, setEducation] = useState({
+        School: '',
+        Degree: '',
+        Startdate: '',
+        EndDate: '',
+        Location: '',
+        Key: '',
+    })
+
     function clear() {
         setPersonal({
             Fullname: '',
@@ -21,6 +30,14 @@ export default function App() {
             Location: '',
             LinkedIn: '',
             GitHub: '',
+        })
+        setEducation({
+            School: '',
+            Degree: '',
+            Startdate: '',
+            EndDate: '',
+            Location: '',
+            Key: '',
         })
     }
 
@@ -33,16 +50,41 @@ export default function App() {
             LinkedIn: 'Linkedin.com/johnsmith',
             GitHub: 'Github.com/johnsmith',
         })
+        setEducation({
+            School: 'RMIT',
+            Degree: 'Bacholar of Software Engineering',
+            Startdate: '01/01/2023',
+            Enddate: 'Present',
+            Location: 'Meloburne, Austrlia',
+            Key: crypto.randomUUID(),
+        })
+        
     }
 
     function handleChange(value, param) {
         setPersonal({...personal, [param]: value})
     }
 
+    function handleDelete(e) {
+        e.preventDefault()
+    }
+
+    function handleCancel(e) {
+        e.preventDefault()
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault()
+    }
+
+    function handleChangeEducation(value, param) {
+        setEducation({...education, [param]: value})
+    }
+
     return (
         <>
-            <Sidebar handleChange={handleChange} personal={personal} clear={clear} example={example}/>
-            <Page personal={personal}/>
+            <Sidebar handleChange={handleChange} personal={personal} clear={clear} example={example} education={education} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} />
+            <Page personal={personal} education={education}/>
         </>
     )
 }
