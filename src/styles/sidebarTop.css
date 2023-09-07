@@ -1,0 +1,49 @@
+.top-buttons {
+    width: 80%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-self: end;
+    justify-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 5px 5px 10px #acadaf;
+    border-radius: 1rem;
+}
+
+.clear {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    justify-items: center;
+    white-space: nowrap;
+}
+
+.clear, .load {
+    border: none;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    padding: 0em 2em;
+    background-color: white;
+}
+
+.clear h3, .load h3 {
+    font-size: 1rem;
+}
+
+.clear {
+    color: red;
+    fill: red;
+}
+
+.load  {
+    background-color: #F3F4F6;
+}
+
+.clear:hover {
+    background-color: #F3F4F6;
+} 
+
+.load:hover {
+    background-color: #ecedf0;
+}

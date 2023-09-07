@@ -1,0 +1,7 @@
+.sidebar {
+    width: 100%;
+    display: grid;
+    align-self: start;
+    gap: 2rem;
+    justify-items: center;
+}
