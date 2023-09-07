@@ -41,8 +41,19 @@
 .links {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 2rem;
     font-size: 0.7rem;
     justify-content: center;
     text-align: center;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info svg {
+    fill: white;
 }
