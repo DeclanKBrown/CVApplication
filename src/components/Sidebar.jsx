@@ -4,7 +4,7 @@ import Personal from './Personal'
 import Education from './Education'
 import { useState } from 'react'
 
-export default function Sidebar({ handleChange, personal, clear, example, education, handleDelete, handleCancel, handleSubmit, handleChangeEducation, form, setForm }) {
+export default function Sidebar({ handleChange, personal, clear, example, formData, handleDelete, handleCancel, handleSubmit, handleChangeEducation, form, setForm, education }) {
 
     const [menu, setMenu] = useState({
         Personal: true,
@@ -22,7 +22,7 @@ export default function Sidebar({ handleChange, personal, clear, example, educat
         <div className='sidebar'>
             <SidebarTop clear={clear} example={example} />
             <Personal handleChange={handleChange} personal={personal} toggleMenu={toggleMenu} menu={menu}/>
-            <Education education={education} toggleMenu={toggleMenu} menu={menu} form={form} setForm={setForm} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation}/>
+            <Education education={education} formData={formData} toggleMenu={toggleMenu} menu={menu} form={form} setForm={setForm} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation}/>
         </div>
     )
 }

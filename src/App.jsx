@@ -13,14 +13,16 @@ export default function App() {
         GitHub: '',
     })
 
-    const [education, setEducation] = useState([{
+    const [education, setEducation] = useState([])
+
+    const [formData, setFormData] = useState({
         School: '',
         Degree: '',
         Startdate: '',
-        EndDate: '',
+        Enddate: '',
         Location: '',
-        Key: crypto.randomUUID(),
-    }])
+        Key: '',
+    })
 
     function clear() {
         setPersonal({
@@ -31,14 +33,14 @@ export default function App() {
             LinkedIn: '',
             GitHub: '',
         })
-        setEducation({
+        setEducation([])
+        setFormData({
             School: '',
             Degree: '',
             Startdate: '',
-            EndDate: '',
+            Enddate: '',
             Location: '',
-            Key: '',
-        })
+        });
     }
 
     function example() {
@@ -50,14 +52,14 @@ export default function App() {
             LinkedIn: 'Linkedin.com/johnsmith',
             GitHub: 'Github.com/johnsmith',
         })
-        setEducation({
+        setEducation([{
             School: 'RMIT',
             Degree: 'Bacholar of Software Engineering',
             Startdate: '01/01/2023',
             Enddate: 'Present',
             Location: 'Melbourne, Australia',
             Key: crypto.randomUUID(),
-        })
+        }])
         
     }
 
@@ -71,29 +73,51 @@ export default function App() {
         e.preventDefault()
         //Delete Logic
         setForm(false)
-
     }
 
     function handleCancel(e) {
         e.preventDefault()
-        //Cancel Logic
+        
+        setFormData({
+            School: '',
+            Degree: '',
+            Startdate: '',
+            Enddate: '',
+            Location: '',
+          });
+
         setForm(false)
     }
 
     function handleSubmit(e) {
         e.preventDefault()
-        //Submit Logic
+        
+        const newEducation = {
+            ...formData,
+            Key: crypto.randomUUID()
+        }
+
+        setEducation([...education, newEducation]);
+
+        setFormData({
+            School: '',
+            Degree: '',
+            Startdate: '',
+            Enddate: '',
+            Location: '',
+          });
+
         setForm(false)
     }
 
     function handleChangeEducation(value, param) {
-        setEducation({...education, [param]: value})
+        setFormData({...formData, [param]: value})
     }
 
     return (
         <>
-            <Sidebar handleChange={handleChange} personal={personal} clear={clear} example={example} education={education} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} form={form} setForm={setForm} />
-            <Page personal={personal} education={education}/>
+            <Sidebar handleChange={handleChange} personal={personal} clear={clear} example={example} formData={formData} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} form={form} setForm={setForm} education={education} />
+            <Page personal={personal} education={education} formData={formData}/>
         </>
     )
 }

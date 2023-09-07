@@ -1,7 +1,7 @@
 import '../styles/personal.css'
 import Form from './Form'
 
-export default function Education({ education, toggleMenu, menu, form, setForm, handleDelete, handleCancel, handleSubmit, handleChangeEducation }) {
+export default function Education({ formData, toggleMenu, menu, form, setForm, handleDelete, handleCancel, handleSubmit, handleChangeEducation, education }) {
 
     return (
         <div className='personal'>
@@ -12,14 +12,16 @@ export default function Education({ education, toggleMenu, menu, form, setForm, 
             {menu.Education === true  && (
                 <>
                 {form ? (
-                    <Form education={education} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} />
+                    <Form formData={formData} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation} />
                 ) : (
                     <>
                         {education.length > 0 ? (
                             education.map((degree) => {
-                                <div className='edu-container' key={degree.Key}>
-                                    <h1>{degree.School}</h1>
-                                </div>
+                                return (
+                                    <div className='edu-container' key={degree.Key}>
+                                        <h1>{degree.School}</h1>
+                                    </div>
+                                )
                             })
                         ) : null }
                         <div className='add-education-cont'>

@@ -6,7 +6,7 @@
     box-shadow: 5px 10px 30px #acadaf;
     align-self: start;
     display: grid;
-    grid-template-rows: 1fr 4fr 3fr;
+    grid-template-rows: min-content min-content 3fr;
 }
 
 .personal-info {
@@ -63,6 +63,8 @@
     justify-items: center;
     padding-top: 1.5rem;
     grid-template-rows: min-content;
+    grid-auto-flow: row;
+    gap: 2rem;
 }
 
 .education-title {
@@ -72,7 +74,6 @@
     display: grid;
     justify-items: center;
     align-content: center;
-    margin-bottom: 1rem;
 }
 
 .education-title h1 {

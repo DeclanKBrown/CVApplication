@@ -58,7 +58,7 @@
 
 /* EDUCATION */
 .add-education-cont {
-    width: 100%;
+    width: 80%;
     display: grid;
     justify-items: center;
     align-content: center;
@@ -143,8 +143,16 @@ form {
 }
 
 .edu-container {
-    width: 100%;
-    border-top: #F3F4F6;
-    border-bottom: #F3F4F6;
+    width: 80%;
+    border-top: 4px solid #F3F4F6;
+    border-bottom: 4px solid #F3F4F6;
+    display: grid;
+    justify-items: center;
+}
+
+.edu-container h1 {
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    font-weight: 500;
 }
 
