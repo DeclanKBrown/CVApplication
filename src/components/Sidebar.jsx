@@ -2,6 +2,7 @@ import '../styles/sidebar.css'
 import SidebarTop from './SidebarTop'
 import Personal from './Personal'
 import Education from './Education'
+import Experience from './Experience'
 import { useState } from 'react'
 
 export default function Sidebar({
@@ -11,10 +12,13 @@ export default function Sidebar({
     example,
     handleChangeEducation,
     education,
+    experience,
+    handleChangeExperience,
 }) {
     const [menu, setMenu] = useState({
         Personal: true,
         Education: false,
+        Experience: false,
     });
 
     function toggleMenu(param) {
@@ -39,6 +43,12 @@ export default function Sidebar({
             <Education
                 education={education}
                 handleChangeEducation={handleChangeEducation}
+                toggleMenu={toggleMenu} 
+                menu={menu} 
+            />
+            <Experience 
+                experience={experience}
+                handleChangeExperience={handleChangeExperience}
                 toggleMenu={toggleMenu} 
                 menu={menu} 
             />

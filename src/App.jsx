@@ -19,7 +19,15 @@ export default function App() {
         Startdate: '',
         Enddate: '',
         Location: '',
-        Key: '',
+    });
+
+    const [experience, setExperience] = useState({
+        Company: '',
+        Position: '',
+        Startdate: '',
+        Enddate: '',
+        Location: '',
+        Description: '',
     });
     
     function clear() {
@@ -37,8 +45,15 @@ export default function App() {
             Startdate: '',
             Enddate: '',
             Location: '',
-            Key: '',
         });
+        setExperience({
+            Company: '',
+            Position: '',
+            Startdate: '',
+            Enddate: '',
+            Location: '',
+            Description: '',
+        })
     }
     
     function example() {
@@ -56,8 +71,15 @@ export default function App() {
             Startdate: '01/01/2023',
             Enddate: 'Present',
             Location: 'Melbourne, Australia',
-            Key: crypto.randomUUID(),
         });
+        setExperience({
+            Company: 'Apple',
+            Position: 'Senior Developer',
+            Startdate: '2018',
+            Enddate: 'Present',
+            Location: 'New York',
+            Description: 'As a Senior Developer at Apple, I have been responsible for contributing to the development and maintenance of cutting-edge software solutions. My role involves collaborating with cross-functional teams, designing and implementing complex features, optimizing code for performance, and ensuring the overall quality and reliability of software products.',
+        })
     }
         
     function handleChange(value, param) {
@@ -66,6 +88,10 @@ export default function App() {
     
     function handleChangeEducation(value, param) {
         setEducation({ ...education, [param]: value });
+    }
+
+    function handleChangeExperience(value, param) {
+        setExperience({...experience, [param]: value})
     }
     
     return (
@@ -78,8 +104,14 @@ export default function App() {
                 formData={education}
                 handleChangeEducation={handleChangeEducation}
                 education={education}
+                handleChangeExperience={handleChangeExperience}
+                experience={experience}
             />
-            <Page personal={personal} education={education} formData={education} />
+            <Page 
+                personal={personal} 
+                education={education} 
+                experience={experience}
+                />
         </>
     );
 }    

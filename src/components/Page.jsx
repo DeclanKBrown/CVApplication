@@ -1,6 +1,6 @@
 import '../styles/page.css'
 
-export default function Page({ personal, education }) {
+export default function Page({ personal, education, experience }) {
     return (
         <>
           <div className="a4">
@@ -66,6 +66,24 @@ export default function Page({ personal, education }) {
                   <div className='information'>
                     <span className='bold'>{education.School}</span>
                     <span>{education.Degree}</span>
+                  </div>
+                </div>
+              </div>
+            }
+            {(experience.Company !== '' || experience.Position !== '' || experience.Startdate !== '' || experience.Enddate !== '' || experience.Location !== ''|| experience.Description !== '') &&
+              <div className='education-container'>
+                <div className='education-title'>
+                  <h1>Experience</h1>
+                </div>
+                <div className='degree-container'>
+                  <div className='information'>
+                    <span>{experience.Startdate} - {experience.Enddate}</span>
+                    <span>{experience.Location}</span>
+                  </div>
+                  <div className='information'>
+                    <span className='bold'>{experience.Company}</span>
+                    <span>{experience.Position}</span>
+                    <span>{experience.Description}</span>
                   </div>
                 </div>
               </div>
