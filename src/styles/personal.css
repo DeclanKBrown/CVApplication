@@ -148,6 +148,7 @@ form {
     border-bottom: 4px solid #F3F4F6;
     display: grid;
     justify-items: center;
+    cursor: pointer;
 }
 
 .edu-container h1 {

@@ -1,6 +1,6 @@
 import '../styles/page.css'
 
-export default function Page({ personal, education, formData }) {
+export default function Page({ personal, education }) {
     return (
         <>
           <div className="a4">
@@ -53,41 +53,23 @@ export default function Page({ personal, education, formData }) {
                 </div>
               </div>
             </div>
-            <div className='education-container'>
-              {(education.length > 0 || formData.School !== '' || formData.Degree !== '' || formData.Startdate !== '' || formData.Enddate !== '' || formData.Location !== '') && (
-                    <div className='education-title'>
-                      <h1>Education</h1>
-                    </div>
-              )}
-              {education.length > 0 && (
-                <>
-                  {education.map((edu) => (
-                      <div className='degree-container'  key={edu.Key}>
-                        <div className='information'>
-                          <span>{edu.Startdate} - {edu.Enddate}</span>
-                          <span>{edu.Location}</span>
-                        </div>
-                        <div className='information'>
-                          <span className='bold'>{edu.School}</span>
-                          <span>{edu.Degree}</span>
-                        </div>
-                      </div>
-                  ))}
-                </>
-              )}
-              {(formData.School !== '' || formData.Degree !== '' || formData.Startdate !== '' || formData.Enddate !== '' || formData.Location !== '') && (
-                    <div className='degree-container'>
-                      <div className='information'>
-                        <span>{formData.Startdate} - {formData.Enddate}</span>
-                        <span>{formData.Location}</span>
-                      </div>
-                      <div className='information'>
-                        <span className='bold'>{formData.School}</span>
-                        <span>{formData.Degree}</span>
-                      </div>
-                    </div>
-              )}
-            </div>
+            {(education.School !== '' || education.Degree !== '' || education.Startdate !== '' || education.Enddate !== '' || education.Location !== '') &&
+              <div className='education-container'>
+                <div className='education-title'>
+                  <h1>Education</h1>
+                </div>
+                <div className='degree-container'>
+                  <div className='information'>
+                    <span>{education.Startdate} - {education.Enddate}</span>
+                    <span>{education.Location}</span>
+                  </div>
+                  <div className='information'>
+                    <span className='bold'>{education.School}</span>
+                    <span>{education.Degree}</span>
+                  </div>
+                </div>
+              </div>
+            }
           </div>
         </>
     )

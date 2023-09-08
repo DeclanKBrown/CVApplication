@@ -4,25 +4,44 @@ import Personal from './Personal'
 import Education from './Education'
 import { useState } from 'react'
 
-export default function Sidebar({ handleChange, personal, clear, example, formData, handleDelete, handleCancel, handleSubmit, handleChangeEducation, form, setForm, education }) {
-
+export default function Sidebar({
+    handleChange,
+    personal,
+    clear,
+    example,
+    handleChangeEducation,
+    education,
+}) {
     const [menu, setMenu] = useState({
         Personal: true,
-        Education: false
-    })
+        Education: false,
+    });
 
     function toggleMenu(param) {
         setMenu((prevMenu) => ({
             ...prevMenu,
-            [param]: !prevMenu[param]
-        }))
+            [param]: !prevMenu[param],
+        }));
     }
 
     return (
         <div className='sidebar'>
-            <SidebarTop clear={clear} example={example} />
-            <Personal handleChange={handleChange} personal={personal} toggleMenu={toggleMenu} menu={menu}/>
-            <Education education={education} formData={formData} toggleMenu={toggleMenu} menu={menu} form={form} setForm={setForm} handleDelete={handleDelete} handleCancel={handleCancel} handleSubmit={handleSubmit} handleChangeEducation={handleChangeEducation}/>
+            <SidebarTop 
+                clear={clear} 
+                example={example}
+            />
+            <Personal 
+                handleChange={handleChange} 
+                personal={personal} 
+                toggleMenu={toggleMenu} 
+                menu={menu} 
+            />
+            <Education
+                education={education}
+                handleChangeEducation={handleChangeEducation}
+                toggleMenu={toggleMenu} 
+                menu={menu} 
+            />
         </div>
-    )
+    );
 }
